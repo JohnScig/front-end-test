@@ -1,8 +1,17 @@
 <div class="main">
-  <input placeholder="Hľadať"/>
-  <div>
+  <input id="search" (input)="filter($event)" placeholder="Hľadať" autocomplete="off"/>
+  <div *ngIf="!filterMode">
     <ol>
       <li *ngFor="let invoice of invoices" class="invoice-list-item">
+        <span class="invoice-name"> {{invoice.name}} </span>
+        <span class="invoice-price"> {{invoice.price}} </span>
+      </li>
+    </ol>
+  </div>
+
+  <div *ngIf="filterMode">
+    <ol>
+      <li *ngFor="let invoice of filteredInvoices" class="invoice-list-item">
         <span class="invoice-name"> {{invoice.name}} </span>
         <span class="invoice-price"> {{invoice.price}} </span>
       </li>
