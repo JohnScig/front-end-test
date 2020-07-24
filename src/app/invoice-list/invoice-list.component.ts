@@ -16,24 +16,20 @@ export class InvoiceListComponent implements OnInit {
   filterMode = false;
 
   invoices: Invoice[];
-  filteredInvoices: Invoice[];
+  displayedInvoices: Invoice[];
 
   ngOnInit(): void {
-    this.invoiceGeneratorService.getInvoices().subscribe(invoices => this.invoices = invoices);
+    this.invoiceGeneratorService.getInvoices().subscribe(invoices => {this.invoices = invoices; this.displayedInvoices = invoices;});
     this.inputSearchElement = document.getElementById('search') as HTMLInputElement;
   }
 
   filter(event: any) {
     if (event.target.value === '') {
-      this.filterMode = false;
+      this.displayedInvoices = this.invoices;
     } else {
-      this.filterMode = true;
+      // const filterString = (event.target.value);
+      this.displayedInvoices = this.invoices.filter(invoice => invoice.name.includes(event.target.value));
     }
-
-    const filterString = (event.target.value);
-
-    this.filteredInvoices = this.invoices.filter(invoice => invoice.name.includes(filterString));
-
   }
 
 }
