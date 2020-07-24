@@ -1,0 +1,14 @@
+.main {
+  width: 300px;
+  height: 100vh;
+  display: inline-block;
+  height: inherit;
+  border-style: dashed;
+}
+
+.invoice-list-item {
+  width: 100%;
+}
+.invoice-price {
+  float: right;
+}

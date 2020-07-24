@@ -1,0 +1,11 @@
+<div class="main">
+  <input placeholder="Hľadať"/>
+  <div>
+    <ol>
+      <li *ngFor="let invoice of invoices" class="invoice-list-item">
+        <span class="invoice-name"> {{invoice.name}} </span>
+        <span class="invoice-price"> {{invoice.price}} </span>
+      </li>
+    </ol>
+  </div>
+<div>
