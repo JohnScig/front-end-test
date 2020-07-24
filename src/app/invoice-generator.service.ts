@@ -16,7 +16,6 @@ export class InvoiceGeneratorService {
   }
 
   generatePrice() {
-
     return Math.floor(Math.random() * Math.floor(10)) / 10;
   }
 

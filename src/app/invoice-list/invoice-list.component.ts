@@ -20,14 +20,14 @@ export class InvoiceListComponent {
   isPaid(price: number, type: string): any {
     if (price > 0.5) {
       if (type === 'string') {
-        return 'zaplatena';
+        return 'Uhradená';
       } else {
         return true;
       }
     }
 
     if (type === 'string') {
-      return 'neuhradena';
+      return 'Vystavená';
     } else {
       return false;
     }
