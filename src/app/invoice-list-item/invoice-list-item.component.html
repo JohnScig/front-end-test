@@ -1,0 +1,4 @@
+<div *ngIf="invoice">
+  <span class="invoice-name"> {{invoice.name}} </span>
+  <span class="invoice-price badge" [ngClass]="getPaymentStatus() ? 'badge-success' : 'badge-primary' "> {{getTag()}} </span>
+</div>

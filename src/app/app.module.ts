@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { InvoiceListOverlordComponent } from './invoice-list-overlord/invoice-list-overlord.component';
 import { InvoiceListSearchComponent } from './invoice-list-search/invoice-list-search.component';
+import { InvoiceListItemComponent } from './invoice-list-item/invoice-list-item.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { InvoiceListSearchComponent } from './invoice-list-search/invoice-list-s
     HomeComponent,
     NavigationComponent,
     InvoiceListOverlordComponent,
-    InvoiceListSearchComponent
+    InvoiceListSearchComponent,
+    InvoiceListItemComponent
   ],
   imports: [
     BrowserModule,

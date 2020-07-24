@@ -2,9 +2,7 @@
   <div>
     <ol>
       <li *ngFor="let invoice of invoices" class="invoice-list-item">
-        <span class="invoice-name"> {{invoice.name}} </span>
-        <span class="invoice-price badge" [ngClass]="isPaid(invoice.price, 'bool') ? 'badge-success' : 'badge-primary' ">
-          {{isPaid(invoice.price, 'string')}} </span>
+        <app-invoice-list-item [invoice]="invoice"></app-invoice-list-item>
       </li>
     </ol>
   </div>
