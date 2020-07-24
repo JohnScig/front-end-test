@@ -1,3 +1,4 @@
+import { InvoiceGeneratorService } from './../invoice-generator.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvoiceGeneratorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private invoiceGeneratorService: InvoiceGeneratorService) { }
+
+  inputElement: HTMLInputElement;
 
   ngOnInit(): void {
+    this.inputElement = document.getElementById('newInvoiceName') as HTMLInputElement;
+  }
+
+  addNewInvoice() {
+    if (this.inputElement.value) {
+      this.invoiceGeneratorService.addInvoice(this.inputElement.value);
+      this.inputElement.value = '';
+    }
   }
 
 }
