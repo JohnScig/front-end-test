@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Invoice } from './models/invoice';
-import { Observable, of } from 'rxjs';
+import { Observable, of, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,8 @@ export class InvoiceGeneratorService {
 
   constructor() { }
 
-  INVOICES: Invoice[];
+  invoices: Invoice[];
+  invoices$ = new BehaviorSubject<Invoice[]>([]);
 
   generateInvoice() {
     return Math.random().toString(36).substring(5);
@@ -28,21 +29,19 @@ export class InvoiceGeneratorService {
       };
       invoices.push(newInvoice);
     }
-
-    this.INVOICES = invoices;
+    this.invoices = invoices;
+    this.invoices$.next(invoices);
   }
 
   getInvoices(): Observable<Invoice[]> {
-    if (!this.INVOICES) {
-      this.generateInvoices(50);
-    }
-    return of(this.INVOICES);
+    return this.invoices$;
   }
 
   addInvoice(invoiceName: string) {
-    this.INVOICES.unshift({
+    this.invoices.unshift({
       name: invoiceName,
       price: this.generatePrice()
     });
+    this.invoices$.next(this.invoices);
   }
 }

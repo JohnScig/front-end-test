@@ -1,3 +1,4 @@
+import { combineLatest, BehaviorSubject } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 
 import { Invoice } from '../models/invoice';
@@ -10,7 +11,7 @@ import { InvoiceGeneratorService } from './../invoice-generator.service';
 })
 export class InvoiceListOverlordComponent implements OnInit {
 
-  searchString = '';
+  searchString = new BehaviorSubject<string>('');
 
   invoices: Invoice[];
   invoicesToDisplay: Invoice[];
@@ -18,12 +19,13 @@ export class InvoiceListOverlordComponent implements OnInit {
   constructor(private invoiceGeneratorService: InvoiceGeneratorService) { }
 
   ngOnInit(): void {
-    this.invoiceGeneratorService.getInvoices().subscribe(invoices => {this.invoicesToDisplay = invoices; this.invoices = invoices; });
+    combineLatest(this.invoiceGeneratorService.getInvoices(), this.searchString, (invoices, searchString) => {
+      this.invoicesToDisplay =  invoices.filter(invoice => invoice.name.includes(searchString));
+    }).subscribe();
   }
 
   onSearchStringChanged(newSearchString: string) {
-    this.searchString = newSearchString;
-    this.invoicesToDisplay = this.invoices.filter(invoice => invoice.name.includes(this.searchString));
+    this.searchString.next(newSearchString);
   }
 
 }
