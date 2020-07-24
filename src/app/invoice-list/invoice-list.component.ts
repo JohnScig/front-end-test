@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { InvoiceGeneratorService } from '../invoice-generator.service';
 import { Invoice } from '../models/invoice';
 
@@ -7,27 +7,21 @@ import { Invoice } from '../models/invoice';
   templateUrl: './invoice-list.component.html',
   styleUrls: ['./invoice-list.component.scss']
 })
-export class InvoiceListComponent implements OnInit {
+export class InvoiceListComponent {
 
   constructor(private invoiceGeneratorService: InvoiceGeneratorService) { }
 
   inputSearchElement: HTMLInputElement;
 
-  invoices: Invoice[];
+  @Input() invoices: Invoice[];
+
   displayedInvoices: Invoice[];
 
-  ngOnInit(): void {
-    this.invoiceGeneratorService.getInvoices().subscribe(invoices => {this.invoices = invoices; this.displayedInvoices = invoices;});
-    this.inputSearchElement = document.getElementById('search') as HTMLInputElement;
-  }
-
-  filter(event: any) {
-    if (event.target.value === '') {
-      this.displayedInvoices = this.invoices;
-    } else {
-      // const filterString = (event.target.value);
-      this.displayedInvoices = this.invoices.filter(invoice => invoice.name.includes(event.target.value));
+  isPaid(price: number): string {
+    if (price > 0.5) {
+      return 'zaplatena';
     }
+    return 'neuhradena';
   }
 
 }

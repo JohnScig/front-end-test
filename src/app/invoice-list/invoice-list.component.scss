@@ -1,22 +1,14 @@
-.main {
-  display: inline-block;
-  height: inherit;
-  width: inherit;
+.invoice-list-container {
+  width: 100%;
   border-style: solid;
   border-color: blue;
   border-width: 1px;
 }
 
-input {
-  width: 90%;
-  margin: 10px;
-
-}
-
 ol {
   height: inherit;
   padding-left: 0px;
-  max-height: calc(100vh - 200px);
+  max-height: calc(100vh - 255px);
   overflow-y: scroll;
 }
 
@@ -28,6 +20,7 @@ li {
   border-width: 0.5px;
   list-style-position: inside;
 }
+
 .invoice-price {
   float: right;
 }

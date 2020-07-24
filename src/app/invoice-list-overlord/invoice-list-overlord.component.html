@@ -1,0 +1,5 @@
+<div class="invoice-list-overlord-container" >
+  <app-invoice-list-search (searchStringChanged)="onSearchStringChanged($event)"></app-invoice-list-search>
+  <app-invoice-list [invoices]="invoicesToDisplay"></app-invoice-list>
+  <app-invoice-list-summary [invoices]="invoicesToDisplay"></app-invoice-list-summary>
+</div>

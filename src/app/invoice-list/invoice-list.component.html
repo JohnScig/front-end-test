@@ -1,14 +1,10 @@
-<div class="main">
-  <input id="search" (input)="filter($event)" placeholder="Hľadať" autocomplete="off"/>
-
+<div class="invoice-list-container">
   <div>
     <ol>
-      <li *ngFor="let invoice of displayedInvoices" class="invoice-list-item">
+      <li *ngFor="let invoice of invoices" class="invoice-list-item">
         <span class="invoice-name"> {{invoice.name}} </span>
-        <span class="invoice-price"> {{invoice.price}} </span>
+        <span class="invoice-price badge badge-primary"> {{isPaid(invoice.price)}} </span>
       </li>
     </ol>
   </div>
-
-  <app-invoice-list-summary [invoices]="displayedInvoices"></app-invoice-list-summary>
 <div>

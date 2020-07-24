@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { InvoicingComponent } from './invoicing/invoicing.component';
 import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { InvoiceListOverlordComponent } from './invoice-list-overlord/invoice-list-overlord.component';
+import { InvoiceListSearchComponent } from './invoice-list-search/invoice-list-search.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { NavigationComponent } from './navigation/navigation.component';
     InvoiceListSummaryComponent,
     InvoicingComponent,
     HomeComponent,
-    NavigationComponent
+    NavigationComponent,
+    InvoiceListOverlordComponent,
+    InvoiceListSearchComponent
   ],
   imports: [
     BrowserModule,
