@@ -1,0 +1,15 @@
+
+.app-container {
+  width: 100%;
+}
+
+.invoice-list {
+  height: 100%;
+  width: 320px;
+  float: left;
+}
+
+.invoice-generator {
+  margin-left: 50px;
+  width: calc(100% - 400px);
+}

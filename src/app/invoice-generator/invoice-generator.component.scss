@@ -1,11 +1,15 @@
 .container {
   display: inline-block;
-  width: 1fr;
   height: fit-content;
+  width: inherit;
   border-style: solid;
 
   input {
-    width: 100%;
+    margin: 20px;
+    width: 90%;
+  }
+
+  button {
   }
 }
 

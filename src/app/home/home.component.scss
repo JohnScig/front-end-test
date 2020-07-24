@@ -1,0 +1,18 @@
+// h1 {
+//   height: 500px;
+//   text-align: center;
+//   margin: auto auto;
+
+// }
+
+div {
+  height: 100vh;
+  overflow-y: hidden;
+  text-align:center;
+  display:table;
+  width:100%;
+
+
+  h1 {display:table-cell; vertical-align:middle}
+}
+

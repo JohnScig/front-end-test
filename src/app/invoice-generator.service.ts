@@ -35,7 +35,7 @@ export class InvoiceGeneratorService {
 
   getInvoices(): Observable<Invoice[]> {
     if (!this.INVOICES) {
-      this.generateInvoices(20);
+      this.generateInvoices(50);
     }
     return of(this.INVOICES);
   }

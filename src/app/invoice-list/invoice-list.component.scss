@@ -1,9 +1,10 @@
 .main {
-  width: 300px;
-  height: 100vh;
   display: inline-block;
   height: inherit;
-  border-style: dashed;
+  width: inherit;
+  border-style: solid;
+  border-color: blue;
+  border-width: 1px;
 }
 
 input {
@@ -13,12 +14,15 @@ input {
 }
 
 ol {
+  height: inherit;
   padding-left: 0px;
+  max-height: calc(100vh - 200px);
+  overflow-y: scroll;
 }
 
 li {
   width: 100%;
-  height: 30px;
+  height: 50px;
   border-style: solid;
   border-color: grey;
   border-width: 0.5px;
