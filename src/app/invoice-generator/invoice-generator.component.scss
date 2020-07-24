@@ -1,16 +1,27 @@
+@import "../../styles.scss";
+@import "~bootstrap/scss/forms";
+// @import "~bootstrap/scss/nav";
+
 .container {
   display: inline-block;
   height: fit-content;
-  width: inherit;
-  border-style: solid;
+  width: 100%;
+  margin-top: 1rem;
 
   input {
-    margin: 20px;
-    width: 90%;
+    // margin: 2rem, 2rem;
+    width: inherit;
   }
 
-  button {
+  .button-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+
+    button {
+      margin-top: 1rem;
+      display: table-cell;
+      vertical-align: middle;
+    }
   }
 }
-
-
