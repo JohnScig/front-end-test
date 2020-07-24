@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
 import { Invoice } from '../models/invoice';
 
 @Component({
@@ -10,7 +11,6 @@ export class InvoiceListSummaryComponent implements OnInit {
 
   @Input()
   set invoices(invoices: Invoice[]) {
-    console.log('new Input');
     this.paidCount = invoices.filter(invoice => invoice.price > 0.5 ).length;
     this.unpaidCount = invoices.filter(invoice => invoice.price <= 0.5 ).length;
   }

@@ -1,7 +1,7 @@
-import { InvoiceGeneratorService } from './../invoice-generator.service';
 import { Component, OnInit } from '@angular/core';
+
 import { Invoice } from '../models/invoice';
-import { Observable } from 'rxjs';
+import { InvoiceGeneratorService } from './../invoice-generator.service';
 
 @Component({
   selector: 'app-invoice-list-overlord',

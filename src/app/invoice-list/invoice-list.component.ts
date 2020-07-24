@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { InvoiceGeneratorService } from '../invoice-generator.service';
+import { Component, Input } from '@angular/core';
 import { Invoice } from '../models/invoice';
 
 @Component({
@@ -9,7 +8,7 @@ import { Invoice } from '../models/invoice';
 })
 export class InvoiceListComponent {
 
-  constructor(private invoiceGeneratorService: InvoiceGeneratorService) { }
+  constructor() { }
 
   inputSearchElement: HTMLInputElement;
 
