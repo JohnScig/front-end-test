@@ -17,11 +17,20 @@ export class InvoiceListComponent {
 
   displayedInvoices: Invoice[];
 
-  isPaid(price: number): string {
+  isPaid(price: number, type: string): any {
     if (price > 0.5) {
-      return 'zaplatena';
+      if (type === 'string') {
+        return 'zaplatena';
+      } else {
+        return true;
+      }
     }
-    return 'neuhradena';
+
+    if (type === 'string') {
+      return 'neuhradena';
+    } else {
+      return false;
+    }
   }
 
 }
