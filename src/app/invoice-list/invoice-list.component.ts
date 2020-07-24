@@ -13,8 +13,6 @@ export class InvoiceListComponent implements OnInit {
 
   inputSearchElement: HTMLInputElement;
 
-  filterMode = false;
-
   invoices: Invoice[];
   displayedInvoices: Invoice[];
 

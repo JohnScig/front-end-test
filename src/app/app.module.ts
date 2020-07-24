@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { InvoiceListComponent } from './invoice-list/invoice-list.component';
 import { InvoiceGeneratorComponent } from './invoice-generator/invoice-generator.component';
+import { InvoiceListSummaryComponent } from './invoice-list-summary/invoice-list-summary.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InvoiceListComponent,
-    InvoiceGeneratorComponent
+    InvoiceGeneratorComponent,
+    InvoiceListSummaryComponent
   ],
   imports: [
     BrowserModule
